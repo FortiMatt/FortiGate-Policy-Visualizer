@@ -101,11 +101,12 @@ def generate_sankey(policy_map):
             target=targets,
             value=values,  # Equal weight for visualization
             customdata=hover_texts,
-            hovertemplate='%{customdata}<extra></extra>'
+            hovertemplate='%{customdata}<extra></extra>',
+            hoverlabel=dict(bgcolor='white', font_color='black')  # Change overlay font to black
         )
     ))
     
-    fig.update_layout(title_text='FortiGate Policy Visualizer', font_size=10, template=theme)
+    fig.update_layout(title_text='FortiGate Policy Visualizer', font_size=10, template=theme,font=dict(color='white'))
     return fig
 
 st.set_page_config(page_title="FortiGate Policy Visualizer", layout="wide", initial_sidebar_state="collapsed")
